@@ -82,6 +82,54 @@ class alunosController extends Controller
             $aluno->save();
         }
 
+        public function editaNome(int $id, StoreAluno $request)
+        {
+            $aluno = Aluno::find($id);
+            $novoNome = $request->nome;
+            $aluno->nome = $novoNome;
+            $aluno->save();
+        }
+
+        public function editaCpf(int $id, StoreAluno $request)
+        {
+            $aluno = Aluno::find($id);
+            $novoCpf = $request->cpf;
+            $aluno->cpf = $novoCpf;
+            $aluno->save();
+        }
+
+        public function editaEndereco(int $id, StoreAluno $request)
+        {
+            $aluno = Aluno::find($id);
+            $novoEndereco = $request->endereco;
+            $aluno->endereco = $novoEndereco;
+            $aluno->save();
+        }
+
+        public function editaTelefone(int $id, StoreAluno $request)
+        {
+            $aluno = Aluno::find($id);
+            $novoTelefone = $request->telefone;
+            $aluno->telefone = $novoTelefone;
+            $aluno->save();
+        }
+
+        public function editaCurso(int $id, StoreAluno $request)
+        {
+            $aluno = Aluno::find($id);
+            $novoCurso = $request->cod_curso;
+            $aluno->cod_curso = $novoCurso;
+            $aluno->save();
+        }
+
+        public function editaCiclo(int $id, StoreAluno $request)
+        {
+            $aluno = Aluno::find($id);
+            $novoCiclo = $request->ciclo;
+            $aluno->ciclo = $novoCiclo;
+            $aluno->save();
+        }
+
     }
 
 
