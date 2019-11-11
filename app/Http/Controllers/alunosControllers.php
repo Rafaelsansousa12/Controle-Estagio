@@ -14,11 +14,6 @@ class alunosController extends Controller
             
         }
 
-        public function login(){
-            return view('alunos.login');
-            
-        }
-
         public function details(StoreAluno $request){
 
             $alunos = Aluno::query()->where('id', $request->id)->get();       
@@ -59,6 +54,10 @@ class alunosController extends Controller
 
             return redirect('/alunos');
     
+       }
+
+       public function __construct(StoreAluno $request){
+           $this->middleware('auth');
        }
 
        public function destroy(StoreAluno $request)

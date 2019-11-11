@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CriarTabelaAlunos extends Migration
+class CreateTableAlunos extends Migration
 {
     /**
      * Run the migrations.
@@ -21,8 +21,8 @@ class CriarTabelaAlunos extends Migration
             $table->string('cpf');
             $table->string('endereco');
             $table->string('telefone');
-            $table->string('cod_curso');
-            $table->string('ciclo');
+            $table->integer('cod_curso')->references('cod_curso')->on('cursos');
+           
         });
 
     

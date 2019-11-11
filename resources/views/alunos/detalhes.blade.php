@@ -194,7 +194,7 @@ function editarMatricula(alunoId) {
         method: 'POST',
         body: formData
     }).then(() => {
-        toggleInput(alunoId);
+        toggleInputMatricula(alunoId);
         document.getElementById(`matricula-aluno-${alunoId}`).textContent = matricula;
     });
 }
