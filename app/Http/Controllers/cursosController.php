@@ -3,7 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Curso;
+use App\Aluno;
+use App\Disciplina;
+
 use App\Http\Requests\StoreCurso;
+use App\Http\Requests\StoreAluno;
+use App\Http\Requests\StoreDisciplina;
 use App\Http\Requests\CursosFormRequest;
 
 class cursosController extends Controller
@@ -15,6 +20,13 @@ class cursosController extends Controller
         $cursos = Curso::query()->orderBy('nome')->get(); 
        
         return view('cursos.indexcurso', compact('cursos', 'mensagem'));
+    }
+
+    public function indexcurso2(int $id){
+
+        $cursos = Disciplinas::find($id)->cursos;
+
+        return view('cursos.indexcurso2', compact('cursos'));
     }
 
     public function create()

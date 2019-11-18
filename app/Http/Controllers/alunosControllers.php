@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Aluno;
+use App\Curso;
 use App\Http\Requests\StoreAluno;
 use App\Http\Requests\AlunosFormRequest;
 
 class alunosController extends Controller
     {
+
+        public function index2(int $id){
+
+            $alunos = Curso::find($id)->alunos;
+
+            return view('alunos.index2', compact('alunos'));
+        }
 
         public function home(){
             return view('alunos.home');
@@ -42,7 +50,7 @@ class alunosController extends Controller
             $cpf = $request->cpf;
             $endereco = $request->endereco;
             $telefone = $request->telefone;    
-            $cod_curso = $request->cod_curso;
+            $curso_id = $request->curso_id;
             $ciclo = $request->ciclo;
 
             $aluno = Aluno::create($request->all());
@@ -116,8 +124,8 @@ class alunosController extends Controller
         public function editaCurso(int $id, StoreAluno $request)
         {
             $aluno = Aluno::find($id);
-            $novoCurso = $request->cod_curso;
-            $aluno->cod_curso = $novoCurso;
+            $novoCurso = $request->curso_id;
+            $aluno->curso_id = $novoCurso;
             $aluno->save();
         }
 

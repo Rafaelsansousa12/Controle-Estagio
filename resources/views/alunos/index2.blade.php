@@ -17,7 +17,7 @@
     <ul class="list-group"> 
     @foreach ($alunos as $aluno)  
     <li class="list-group-item d-flex  justify-content-between align-items-center">
-
+    
     <table>
     <tr>
     <th style="text-align:center">Matricula:</th> 
@@ -31,15 +31,14 @@
 
     </table>
 
-    <span class="d-flex">
     <form method="get" action="/alunos/detalhes/{{ $aluno->id }}">
          
-    <button class="btn btn-info btn-sm mtr=l mr-2" >
+    <button class="btn btn-info btn-sm mtr=l" >
         <i class="fas fa-edit"></i>
     </button>
 
     </form>   
-   
+
     <form method="post" action="/alunos/{{ $aluno->id }}" onsubmit="return confirm('Tem certeza que deseja excluir?')">
         
         @csrf
@@ -47,7 +46,7 @@
          
         <button class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
     </form>
-    </span>
+    
     </li>
     @endforeach
     </ul>

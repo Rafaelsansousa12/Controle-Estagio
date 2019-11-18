@@ -37,10 +37,10 @@
                 <input type="text" class="form-control" name="telefone" >
 
                 <label for="nome" class="">Curso:</label>
-                <input type="text" class="form-control" name="cod_curso" >
+                <input type="number" class="form-control" name="curso_id" >
 
                 <label for="nome" class="">Ciclo:</label>
-                <input type="text" class="form-control" name="ciclo" >
+                <input type="number" class="form-control" name="ciclo" >
             </div>
             <button class="btn btn-primary">Cadastrar</button>
         </form>

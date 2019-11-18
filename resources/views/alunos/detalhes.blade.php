@@ -118,10 +118,10 @@
 
     <tr>
     <th style="text-align:center">Curso:</th> 
-        <td>    <span id="curso-aluno-{{ $aluno->id }}">{{ $aluno->cod_curso }}</span>
+        <td>    <span id="curso-aluno-{{ $aluno->id }}">{{ $aluno->curso_id }}</span>
 
             <div class="input-group w-50" hidden id="input-curso-aluno-{{ $aluno->id }}">
-                <input type="text" class="form-control" value="{{ $aluno->cod_curso }}">
+                <input type="text" class="form-control" value="{{ $aluno->curso_id }}">
                 <div class="input-group-append">
                     <button class="btn btn-primary" onclick="editarCurso({{ $aluno->id }})">
                         <i class="fas fa-check"></i>

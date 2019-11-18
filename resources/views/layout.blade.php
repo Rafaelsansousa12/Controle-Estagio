@@ -18,6 +18,7 @@
   <a class="navbar-brand" href="{{route('alunos')}}">Alunos</a>
   <a class="navbar-brand" href="{{route('alunos')}}">Coordenadores</a>
   <a class="navbar-brand" href="/cursos">Cursos</a>
+  <a class="navbar-brand" href="/disciplinas">Disciplinas</a>
 </nav>
 <div class="container" >
    
