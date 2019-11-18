@@ -20,7 +20,7 @@
     
     <table>
     <tr>
-    <th style="text-align:center">Código Curso:</th> 
+    <th style="text-align:center">Código:</th> 
     <td>{{ $curso->id}}</td> 
     </tr>
 
