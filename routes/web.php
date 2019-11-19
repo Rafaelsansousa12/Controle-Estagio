@@ -5,15 +5,18 @@
 //Route::get('/', 'alunosController@login');
 Route::get('/', 'alunosController@home');
 Route::get('/cursos', 'cursosController@index');
+Route::get('/coordenadores', 'coordenadoresController@index');
 Route::get('/alunos', 'alunosController@index')->name('alunos');
 Route::get('/alunos/detalhes/{id}', 'alunosController@details');
 
 Route::get('/alunos/cadastrar', 'alunosController@create')->name('form-cadastrar-aluno');
 Route::get('/cursos/cadastrar', 'cursosController@create')->name('form-cadastrar-curso');
-
+Route::get('/coordenadores/cadastrar', 'coordenadoresController@create')->name('form-cadastrar-coordenador');
+Route::get('/cursos/{id}/coordenadores', 'coordenadoresController@indexcoordenador2');
 
 Route::post('/alunos/cadastrar', 'alunosController@store');
 Route::post('/cursos/cadastrar', 'cursosController@store');
+Route::post('/coordenadores/cadastrar', 'coordenadoresController@store');
 Route::delete('/alunos/{id}', 'alunosController@destroy');
 Route::delete('/cursos/{cod_curso}', 'cursosController@destroy');
 Route::get('/cursos/{id}/alunos', 'alunosController@index2');

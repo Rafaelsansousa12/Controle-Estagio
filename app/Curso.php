@@ -19,5 +19,10 @@ class Curso extends Model
     {
         return $this->hasMany(Disciplina::class);
     }
+
+    public function coordenadores()
+    {
+        return $this->hasMany(Coordenador::class);
+    }
         
 }

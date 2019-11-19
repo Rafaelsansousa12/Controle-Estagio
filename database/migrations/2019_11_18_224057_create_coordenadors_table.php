@@ -13,8 +13,16 @@ class CreateCoordenadorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('coordenadors', function (Blueprint $table) {
+        Schema::create('coordenadores', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('matricula');
+            $table->string('nome');
+            $table->integer('curso_id');
+
+            $table->foreign('curso_id')
+            ->references('id')
+            ->on('cursos');
+
             $table->timestamps();
         });
     }
@@ -26,6 +34,6 @@ class CreateCoordenadorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coordenadors');
+        Schema::dropIfExists('coordenadores');
     }
 }

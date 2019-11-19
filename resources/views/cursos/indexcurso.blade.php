@@ -40,6 +40,10 @@
         <i class="fas fa-external-link-alt"> Disciplinas</i>
     </a>
 
+    <a href="/cursos/{{ $curso->id}}/coordenadores" class="btn btn-info btn-sm mtr=3 mr-2" >
+        <i class="fas fa-external-link-alt"> Coordenadores</i>
+    </a>
+
     <form method="post" action="/cursos/{{ $curso->id }}" onsubmit="return confirm('Tem certeza que deseja excluir?')">
 
         @csrf

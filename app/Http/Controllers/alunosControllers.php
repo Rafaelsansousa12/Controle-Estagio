@@ -15,6 +15,12 @@ class alunosController extends Controller
             $alunos = Curso::find($id)->alunos;
 
             return view('alunos.index2', compact('alunos'));
+
+            $alunos = DB::table('alunos')
+            ->join('nome')
+            ->join('sigla')
+            ->select('alunos.*', 'cursos.sigla')
+            ->get();
         }
 
         public function home(){
